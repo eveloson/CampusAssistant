@@ -61,7 +61,7 @@
  发微博
  */
 - (void)send{
-    [self presentViewController:[[UIViewController alloc] init] animated:YES completion:nil];
+    
 }
 
 - (void)dealloc{

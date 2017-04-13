@@ -23,6 +23,9 @@
     self.title = @"设置";
     [self setupGroup0];
     [self setupGroup1];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];  
 }
 - (void)setupGroup0 {
     //0组

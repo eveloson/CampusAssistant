@@ -11,7 +11,7 @@
 {
     CGFloat witdFloat;
     UIView* buttonDown;
-    NSInteger selectSeugment;
+    
 }
 @end
 
@@ -30,8 +30,11 @@
         [button setTag:i];
         [button addTarget:self action:@selector(changeTheSegument:) forControlEvents:UIControlEventTouchUpInside];
         if (i==0) {
-            buttonDown=[[UIView alloc]initWithFrame:CGRectMake(i*witdFloat, self.bounds.size.height-2, witdFloat, 2)];
-            [buttonDown setBackgroundColor:[UIColor redColor]];
+//            NSString* title = SegumentArray[i];
+//            CGSize titleSize = [title sizeWithAttributes:@{NSFontAttributeName:self.titleFont}];
+//            buttonDown=[[UIView alloc]initWithFrame:CGRectMake((witdFloat-titleSize.width)/2, self.bounds.size.height-2, titleSize.width, 2)];
+            buttonDown = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 2, witdFloat, 2)];
+            [buttonDown setBackgroundColor:RGB(16, 175, 241)];
             [self addSubview:buttonDown];
         }
         [self addSubview:button];
@@ -46,27 +49,28 @@
 }
 -(void)selectTheSegument:(NSInteger)segument
 {
-    if (selectSeugment!=segument) {
+    if (self.selectSeugment!=segument) {
         NSLog(@"我点击了");
-        [self.ButtonArray[selectSeugment] setSelected:NO];
+        [self.ButtonArray[self.selectSeugment] setSelected:NO];
         [self.ButtonArray[segument] setSelected:YES];
         [UIView animateWithDuration:0.5 animations:^{
             [buttonDown setFrame:CGRectMake(segument*witdFloat,self.bounds.size.height-2, witdFloat, 2)];
         }];
-        selectSeugment=segument;
-        [self.delegate uisegumentSelectionChange:selectSeugment];
+        self.selectSeugment=segument;
+        [self.delegate uisegumentSelectionChange:self.selectSeugment];
     }
 }
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self.ButtonArray=[NSMutableArray array];
-    selectSeugment=0;
-    self.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:12.0f];
+    self.selectSeugment=0;
+    self.titleFont=[UIFont fontWithName:@".Helvetica Neue Interface" size:14.0f];
     self=[super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
-    self.LJBackGroundColor=[UIColor colorWithRed:253.0f/255 green:239.0f/255 blue:230.0f/255 alpha:1.0f];
-    self.titleColor=[UIColor colorWithRed:77.0/255 green:77.0/255 blue:77.0/255 alpha:1.0f];
-    self.selectColor=[UIColor colorWithRed:233.0/255 green:97.0/255 blue:31.0/255 alpha:1.0f];
+//    self.LJBackGroundColor=[UIColor colorWithRed:253.0f/255 green:239.0f/255 blue:230.0f/255 alpha:1.0f];
+    self.LJBackGroundColor = [UIColor clearColor];
+    self.titleColor=RGB(151, 173, 192);
+    self.selectColor = RGB(16, 175, 241);
     [self setBackgroundColor:self.LJBackGroundColor];
     return self;
 }

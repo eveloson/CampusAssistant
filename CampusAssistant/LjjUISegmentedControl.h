@@ -14,6 +14,7 @@
 @interface LjjUISegmentedControl : UIView
 @property(nonatomic,strong)id <LjjUISegmentedControlDelegate>delegate;
 @property(nonatomic,strong)NSMutableArray* ButtonArray;
+@property(nonatomic,assign)NSInteger selectSeugment; 
 @property(strong,nonatomic)UIColor* LJBackGroundColor;
 @property(strong,nonatomic)UIColor* titleColor;
 @property(strong,nonatomic)UIColor* selectColor;

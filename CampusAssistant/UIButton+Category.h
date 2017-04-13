@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, MKButtonEdgeInsetsStyle) {
     MKButtonEdgeInsetsStyleRight // image在右，label在左
 };
 @interface UIButton (Category)
++(instancetype)buttonWithTitle:(NSString *)title AndImage:(NSString *)image;
 - (void)layoutButtonWithEdgeInsetsStyle:(MKButtonEdgeInsetsStyle)style
                         imageTitleSpace:(CGFloat)space;
 

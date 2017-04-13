@@ -9,12 +9,12 @@
 #import "UIButton+Category.h"
 
 @implementation UIButton (Category)
-//+(instancetype)buttonWithTitle:(NSString *)title AndImage:(NSString *)image{
-//    UIButton *button = [[UIButton alloc] init];
-//    [button setTitle:title forState:UIControlStateNormal];
-//    [button setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
-//    return button;
-//}
++(instancetype)buttonWithTitle:(NSString *)title AndImage:(NSString *)image{
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    return button;
+}
 - (void)layoutButtonWithEdgeInsetsStyle:(MKButtonEdgeInsetsStyle)style
                         imageTitleSpace:(CGFloat)space
 {

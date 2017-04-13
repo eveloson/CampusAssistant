@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     SettingItem *sina = [SettingArrowItem itemWithTitle:@"新浪微博" destVcClass:nil];
     SettingItem *sms = [SettingArrowItem itemWithTitle:@"短信分享" destVcClass:nil];
  
