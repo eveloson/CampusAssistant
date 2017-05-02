@@ -88,6 +88,7 @@
     self.terms = [[NSArray alloc] initWithObjects:@"1",@"2", nil];
     
     termView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-20-44-256, ScreenWidth, 256)];
+//     termView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth/2, 256)];
     termView.backgroundColor = [UIColor whiteColor];
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, 60, 30)];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
